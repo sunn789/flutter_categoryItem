@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
-  CategoryItem({Key? key, required this.title, required this.color})
+  const CategoryItem({Key? key, required this.title, required this.color})
       : super(key: key);
 
   final String title;
@@ -11,10 +11,13 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      child: Text(title),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.titleMedium,
+      ),
       decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [color],
+            colors: [color, Colors.amber],
             begin: Alignment.topLeft,
             end: Alignment.bottomLeft,
           ),
